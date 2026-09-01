@@ -83,14 +83,14 @@ export default function Navbar() {
             className={cn(
               'hidden min-h-9 items-center justify-center rounded-full bg-teal-900 px-4 text-sm font-semibold text-white transition-[color,background-color,border-color,transform,box-shadow] duration-700 sm:inline-flex',
               EASE,
-              'hover:bg-teal-800 active:scale-[0.98]'
+              'hover:-translate-y-0.5 hover:bg-teal-800 active:translate-y-0 active:scale-[0.98]'
             )}
           >
             וואטסאפ
           </a>
 
           <button
-            className="relative flex h-9 w-9 items-center justify-center"
+            className={cn('relative flex h-9 w-9 items-center justify-center transition-transform duration-700', EASE, 'hover:scale-110 active:scale-95')}
             aria-expanded={open}
             aria-controls="site-menu"
             aria-label={open ? 'סגירת תפריט ניווט' : 'פתיחת תפריט ניווט'}

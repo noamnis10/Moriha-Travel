@@ -53,8 +53,13 @@ export default function AboutPage() {
 
         <section className="bg-paper py-20">
           <div ref={revealStory.ref} className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-[1fr_1fr]">
-            <div className="overflow-hidden rounded-[2rem] shadow-lg">
-              <img src={ABOUT_IMAGE} alt="פגישת ייעוץ אישית עם צוות Moriah Travel" loading="lazy" className="h-full w-full object-cover" />
+            <div className="group overflow-hidden rounded-[2rem] shadow-lg transition-shadow duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:shadow-xl">
+              <img
+                src={ABOUT_IMAGE}
+                alt="פגישת ייעוץ אישית עם צוות Moriah Travel"
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.06]"
+              />
             </div>
             <div>
               <h2 className="text-3xl font-semibold text-ink sm:text-4xl">איך זה התחיל</h2>

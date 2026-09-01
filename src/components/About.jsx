@@ -16,13 +16,13 @@ export default function About() {
     <section id="about" className="scroll-mt-24 bg-paper py-24">
       <div ref={reveal.ref} className={`mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-[0.8fr_1.2fr] ${reveal.className}`}>
         <div className="order-first flex justify-center lg:order-none">
-          <div className="relative w-full max-w-sm">
-            <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem] shadow-lg">
+          <div className="group relative w-full max-w-sm transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-1.5">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem] shadow-lg transition-shadow duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:shadow-xl">
               <img
                 src={ABOUT_IMAGE}
                 alt="פגישת ייעוץ אישית עם צוות Moriah Travel"
                 loading="lazy"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.06]"
               />
               <div className="pointer-events-none absolute inset-0 bg-teal-950/15" />
             </div>

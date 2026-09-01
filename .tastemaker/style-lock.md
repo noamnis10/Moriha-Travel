@@ -94,6 +94,47 @@ replacing the earlier IntersectionObserver-only approach:
 - No `transition: all` anywhere — every Tailwind transition lists the
   specific properties it animates.
 
+**Interaction-level animation pass** (built with the `animate` skill, scoped
+by 10+ clarifying questions the client answered):
+- **Page transitions**: new route content fades + rises in on mount only
+  (`.page-transition` / `@keyframes page-enter` in `src/index.css`,
+  `--ease-out: cubic-bezier(0.23, 1, 0.32, 1)` — a new token, kept separate
+  from the drawer curve below since it's a different animation family).
+  450ms desktop, 220ms on screens ≤767px per the client's explicit
+  "faster/simpler on mobile" answer. No exit/crossfade animation on the
+  outgoing page — the client's chosen (recommended) option.
+- **Card + image hover** (Pricing package cards, About teaser photo,
+  AboutPage story photo): image scales `1.06` inside its `overflow-hidden`
+  frame while the whole card/photo block lifts (`-translate-y-1.5`) and its
+  shadow deepens — the client explicitly wanted both effects together, not
+  image-only. Reuses the existing `duration-700` +
+  `ease-[cubic-bezier(0.32,0.72,0,1)]` drawer curve already used for the
+  card's own hover state, so the two motions read as one gesture.
+- **Buttons/icons**: subtle `hover:-translate-y-0.5` added to the shared
+  `Button` primitive and the navbar's WhatsApp pill/hamburger, reset via
+  `active:translate-y-0` so a press doesn't fight the hover lift. Kept on
+  the site's existing 700ms drawer-curve duration rather than the skill's
+  own faster hover guideline (100–300ms), because that duration is already
+  the site's established "premium, deliberate" motion language (confirmed
+  by the client as the desired character) — introducing a second, faster
+  timing just for buttons would read as inconsistent, not premium.
+- **Explicitly rejected, per the client's own answers**: no count-up
+  animation on the stats numbers (kept static), no idle/attention-getting
+  animation on the floating WhatsApp button (stays static except hover —
+  it's visible on every page/scroll, which is exactly the skill's
+  100+-times-tier disqualifier for repeating motion), and no animation
+  polish on `/dashboard` (internal tool, explicitly out of scope).
+- **Hover gating fix, sitewide**: Tailwind v4's default `hover` variant
+  compiles to a plain `:hover` selector with no pointer-capability check,
+  which "sticks" after a tap on touch devices — the exact ungated-hover
+  anti-pattern the `animate` skill's Never-Ship table blocks. Fixed once,
+  globally, with a `@custom-variant hover { @media (hover: hover) and
+  (pointer: fine) { &:hover { @slot; } } }` redefinition in `src/index.css`,
+  rather than hand-gating every individual `hover:` utility in the codebase.
+- Reduced motion for all of the above is covered for free by the existing
+  global `@media (prefers-reduced-motion: reduce)` block in `src/index.css`,
+  which already zeroes every CSS transition/animation duration site-wide.
+
 ## Navigation
 
 Floating "island" pill nav (logo + WhatsApp + hamburger) expanding to a

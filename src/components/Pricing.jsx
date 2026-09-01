@@ -61,7 +61,7 @@ export default function Pricing() {
             return (
               <article
                 key={pkg.id}
-                className={`flex flex-col overflow-hidden rounded-3xl border bg-paper shadow-sm transition-[color,background-color,border-color,transform,box-shadow] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-1.5 hover:shadow-lg ${
+                className={`group flex flex-col overflow-hidden rounded-3xl border bg-paper shadow-sm transition-[color,background-color,border-color,transform,box-shadow] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-1.5 hover:shadow-lg ${
                   isRecommended ? 'border-teal-700 ring-1 ring-teal-700' : 'border-border'
                 }`}
               >
@@ -71,7 +71,7 @@ export default function Pricing() {
                       src={pkg.image}
                       alt=""
                       loading="lazy"
-                      className="absolute inset-0 h-full w-full object-cover mix-blend-luminosity"
+                      className="absolute inset-0 h-full w-full object-cover mix-blend-luminosity transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.06]"
                     />
                   )}
                   <div className="absolute inset-0 bg-teal-950/45" />

@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+/* Gate `hover:` sitewide to real hover-capable pointers. Tailwind v4's
+   default `hover` variant compiles to plain `:hover`, which on touch
+   devices "sticks" after a tap until the user taps elsewhere — the exact
+   ungated-hover anti-pattern the animate skill blocks. This redefines the
+   variant once instead of hand-gating every hover: utility in the codebase. */
+@custom-variant hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @slot;
+    }
+  }
+}
+
 /*
   Palette: "premium travel" mood — deep navy (trust, night-sky navigation,
   ocean) + warm brass (vintage boarding passes, hospitality) on a warm
@@ -33,6 +46,13 @@
   --font-heading: "Frank Ruhl Libre", Georgia, serif;
   --font-body: "Heebo", Arial, sans-serif;
   --font-brand: "Playfair Display", Georgia, serif;
+}
+
+/* Strong ease-out for entrances — distinct from the drawer/UI-morph curve
+   (cubic-bezier(0.32,0.72,0,1)) used for hover/press feedback throughout
+   the site; this one is for content arriving on screen, not reacting to input. */
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 html {
@@ -69,4 +89,29 @@ h1, h2, h3, .font-heading {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Page-enter transition: fade + a small rise for the newly-routed page's
+   content only (no exit animation on the outgoing page — confirmed as the
+   preferred, cheaper option). Restarted on every navigation by remounting
+   this wrapper via a `key={pathname}` in App.jsx. */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-transition {
+  animation: page-enter 450ms var(--ease-out) both;
+}
+
+@media (max-width: 767px) {
+  .page-transition {
+    animation-duration: 220ms;
+  }
 }
