@@ -288,6 +288,26 @@ improvement layered on since: `min-h-[100dvh]` (not `min-h-screen`), the
 scroll parallax, the single-primary-CTA structure, and the entrance
 timeline. Content order and copy are unchanged from the fourth pass.
 
+## Sixth pass — client override: Hero photo shown uncropped
+
+Explicit client request: show the hero photo "at the size I sent it to
+you" — i.e. don't crop it to fill the frame. Switched the background image
+from `object-cover` (crops to fill, which is what "full screen" meant in
+the fifth pass) to `object-contain` (whole photo visible, true aspect
+ratio, letterboxed against the navy background instead of cropped).
+Dropped the 120%-oversize/parallax-buffer hack from the fifth pass since
+it existed only to hide cover-crop edges that no longer exist, and
+narrowed the parallax drift range accordingly (±8% → ±3%) since there's no
+crop buffer to hide it in anymore.
+
+On desktop this reads as effectively full-bleed anyway: the photo's own
+dusk tones blend into the navy background at the letterbox edges. On
+mobile the trade-off is real and worth flagging: the photo is landscape
+(2400×1357) and the viewport is a narrow portrait, so "uncropped" means
+the photo renders as a shorter band rather than filling the screen — an
+inherent consequence of not cropping a wide photo into a tall frame, not
+a bug.
+
 ## Open items / honest gaps
 
 - Testimonials are still placeholder copy (flagged since the first pass).

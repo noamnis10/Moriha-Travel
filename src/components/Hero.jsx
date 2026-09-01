@@ -34,15 +34,15 @@ export default function Hero() {
       gsap.set(targets, { autoAlpha: 1, y: 0 });
     });
 
-    // Subtle full-bleed background parallax on scroll — desktop only (the
-    // client asked for a faster/simpler mobile experience). The image is
-    // oversized (120% height) so this drift never reveals an edge.
+    // Subtle background parallax on scroll — desktop only (the client asked
+    // for a faster/simpler mobile experience). The photo is shown whole
+    // (object-contain, not cropped), so the drift range stays small.
     mm.add('(prefers-reduced-motion: no-preference) and (min-width: 768px)', () => {
       gsap.fromTo(
         bgRef.current,
-        { yPercent: -8 },
+        { yPercent: -3 },
         {
-          yPercent: 8,
+          yPercent: 3,
           ease: 'none',
           scrollTrigger: { trigger: sectionRef.current, start: 'top top', end: 'bottom top', scrub: true },
         }
@@ -70,10 +70,10 @@ export default function Hero() {
           src="/media/hero-santorini.jpg"
           alt=""
           aria-hidden="true"
-          className="absolute inset-x-0 -top-[10%] h-[120%] w-full object-cover"
+          className="absolute inset-0 h-full w-full object-contain"
         />
       </div>
-      <div className="absolute inset-0 -z-10 bg-teal-950/55" />
+      <div className="absolute inset-0 -z-10 bg-teal-950/45" />
 
       <div className="mx-auto w-full max-w-6xl px-6 py-16">
         <p ref={eyebrowRef} className="mb-4 text-sm font-bold uppercase tracking-[0.14em] text-teal-100">
