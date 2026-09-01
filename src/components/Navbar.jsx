@@ -6,9 +6,9 @@ import { cn } from '../lib/utils';
 
 const NAV_LINKS = [
   { href: '#home', label: 'בית', type: 'anchor' },
+  { href: '#pricing', label: 'יעדים וחבילות', type: 'anchor' },
   { href: '/about', label: 'אודות', type: 'route' },
   { href: '#services', label: 'שירותים', type: 'anchor' },
-  { href: '#pricing', label: 'יעדים וחבילות', type: 'anchor' },
   { href: '#testimonials', label: 'המלצות', type: 'anchor' },
   { href: '#faq', label: 'שאלות נפוצות', type: 'anchor' },
   { href: '#contact', label: 'צור קשר', type: 'anchor' },

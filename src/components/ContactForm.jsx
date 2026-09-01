@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { waLink } from '../lib/whatsapp';
 import { useReveal } from '../hooks/useReveal';
 import RevealHeading from './RevealHeading';
+import { Button } from './ui/button';
 
 export default function ContactForm() {
   const reveal = useReveal();
@@ -40,11 +41,15 @@ export default function ContactForm() {
 
         <form onSubmit={onSubmit} className="flex flex-col gap-4 rounded-3xl bg-paper p-8 shadow-lg">
           <div className="flex flex-col gap-1">
-            <label htmlFor="name" className="text-xs font-bold text-ink-soft">שם מלא</label>
+            <label htmlFor="name" className="text-xs font-bold text-ink-soft">
+              שם מלא <span className="text-teal-700">*</span>
+            </label>
             <input id="name" required value={form.name} onChange={update('name')} className="min-h-11 rounded-lg border border-border px-3 text-sm outline-none focus:ring-2 focus:ring-teal-700" />
           </div>
           <div className="flex flex-col gap-1">
-            <label htmlFor="phone" className="text-xs font-bold text-ink-soft">טלפון</label>
+            <label htmlFor="phone" className="text-xs font-bold text-ink-soft">
+              טלפון <span className="text-teal-700">*</span>
+            </label>
             <input id="phone" type="tel" required value={form.phone} onChange={update('phone')} className="min-h-11 rounded-lg border border-border px-3 text-sm outline-none focus:ring-2 focus:ring-teal-700" />
           </div>
           <div className="flex flex-col gap-1">
@@ -55,12 +60,9 @@ export default function ContactForm() {
             <label htmlFor="message" className="text-xs font-bold text-ink-soft">הודעה</label>
             <textarea id="message" rows={4} value={form.message} onChange={update('message')} placeholder="ספרו לנו קצת על הטיול הרצוי..." className="rounded-lg border border-border px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-teal-700" />
           </div>
-          <button
-            type="submit"
-            className="min-h-11 rounded-full bg-teal-900 px-6 text-base font-semibold text-white transition-[color,background-color,border-color,transform,box-shadow] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-teal-800 active:scale-[0.98]"
-          >
+          <Button type="submit" size="lg">
             שליחה בוואטסאפ
-          </button>
+          </Button>
         </form>
       </div>
     </section>

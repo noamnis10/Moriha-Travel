@@ -67,6 +67,15 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Sitewide keyboard-focus fallback for links and controls that don't set
+   their own focus ring (Button and form inputs already do). Keeps the
+   brand teal consistent instead of falling back to each browser's default
+   blue outline. */
+:focus-visible {
+  outline: 2px solid var(--color-teal-700);
+  outline-offset: 2px;
+}
+
 body {
   font-family: var(--font-body);
   color: var(--color-ink);

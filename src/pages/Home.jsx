@@ -31,10 +31,10 @@ export default function Home() {
       <Navbar />
       <main id="main">
         <Hero />
+        <Pricing />
         <TaglineReveal />
         <About />
         <Services />
-        <Pricing />
         <Testimonials />
         <Faq />
         <ContactForm />

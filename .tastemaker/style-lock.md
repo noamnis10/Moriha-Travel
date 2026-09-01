@@ -247,6 +247,36 @@ fully known. Concrete changes:
   Pricing card included), rather than let the two mix on the same
   component tier.
 
+## Fourth pass — refinement (`impeccable`)
+
+Honesty note: as with earlier passes, only this skill's top-level `SKILL.md`
+was present in this environment — its `scripts/context.mjs` and
+`reference/*.md` files (routing, craft-floor, new-work, etc.) were not
+available, so this pass applied the skill's stated principles by hand
+rather than running its setup script or consulting the detailed
+references. Client confirmed: refinement (not a new visual direction),
+applied end-to-end on the home page.
+
+- **Section order**: Pricing moved to right after Hero (was 5th of 8
+  sections, now 2nd) per explicit request — the packages a visitor came
+  for are no longer buried below the tagline/about/services scroll. Nav
+  link order updated to match.
+- **Eyebrow re-balance**: moving Pricing next to Hero put two eyebrows
+  back-to-back, violating the adjacency rule fixed in the third pass.
+  Dropped Pricing's own eyebrow, folding its context ("for the upcoming
+  period") into the headline itself instead of losing it.
+- **Contact form**: swapped the hand-styled submit button for the shared
+  `Button` component (consistency, gets the hover-lift for free), added
+  visible required-field markers on name/phone (already `required`
+  natively, just wasn't indicated to a sighted user before attempting
+  submit).
+- **Sitewide keyboard focus**: added one global `:focus-visible` rule
+  (brand teal ring) as a fallback for links and controls that don't set
+  their own focus style (Footer nav, FAQ accordion triggers, Services
+  list buttons) — previously fell back to each browser's default outline.
+  Button and form inputs already had their own focus treatment and are
+  unaffected (their utility classes win on specificity).
+
 ## Open items / honest gaps
 
 - Testimonials are still placeholder copy (flagged since the first pass).

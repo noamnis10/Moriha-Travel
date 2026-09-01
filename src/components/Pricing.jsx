@@ -60,8 +60,7 @@ export default function Pricing() {
   return (
     <section id="pricing" className="scroll-mt-24 bg-paper py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-teal-700">יעדים לתקופה הקרובה</p>
-        <RevealHeading className="text-3xl font-semibold text-ink sm:text-4xl">יעדים וחבילות נבחרות</RevealHeading>
+        <RevealHeading className="text-3xl font-semibold text-ink sm:text-4xl">יעדים וחבילות נבחרות לתקופה הקרובה</RevealHeading>
         <p className="mt-4 max-w-xl text-ink-soft">
           חבילות מוכנות, במחיר שכולל טיסה ומלון, ומתעדכנות באופן שוטף. מוזמנים לפנות אלינו גם ליעד אחר שלא רשום כאן.
         </p>
