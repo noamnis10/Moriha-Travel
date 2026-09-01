@@ -26,7 +26,7 @@ export default function ThankYou() {
           תודה שפניתם אלינו{destination ? ` בנוגע ל${destination}` : ''}
         </h1>
         <p className="max-w-md text-ink-soft">
-          פתחנו לכם חלון וואטסאפ עם ההודעה מוכנה לשליחה. אם החלון לא נפתח, אפשר לכתוב לנו ישירות בכתובת שלמטה — נחזור אליכם בהקדם.
+          פתחנו לכם חלון וואטסאפ עם ההודעה מוכנה לשליחה. אם החלון לא נפתח, אפשר לכתוב לנו ישירות בכתובת שלמטה, ונחזור אליכם בהקדם.
         </p>
 
         <div className="mt-2 flex flex-wrap items-center justify-center gap-4">

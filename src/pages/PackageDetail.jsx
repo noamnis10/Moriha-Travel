@@ -73,7 +73,7 @@ export default function PackageDetail() {
             <h1 className="max-w-[680px] text-balance text-4xl font-semibold leading-tight sm:text-5xl">
               {pkg.flag} {pkg.destination}
             </h1>
-            <p className="mt-4 text-lg text-white/85">{pkg.dateFrom} – {pkg.dateTo}</p>
+            <p className="mt-4 text-lg text-white/85">{pkg.dateFrom} - {pkg.dateTo}</p>
           </div>
         </section>
 
@@ -134,7 +134,7 @@ export default function PackageDetail() {
                 size="lg"
                 className="mt-8 w-full"
                 onClick={() => {
-                  const text = `שלום, אשמח לפרטים והזמנה על חבילת ${pkg.destination} (${pkg.dateFrom}–${pkg.dateTo})`;
+                  const text = `שלום, אשמח לפרטים והזמנה על חבילת ${pkg.destination} (${pkg.dateFrom}-${pkg.dateTo})`;
                   window.open(waLink(text), '_blank', 'noopener,noreferrer');
                   navigate('/thank-you', { state: { destination: pkg.destination } });
                 }}

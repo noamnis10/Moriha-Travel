@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 import { DEFAULT_PACKAGES, loadPackages, resetPackages, savePackages } from '../lib/packages';
 
-const ACCENT_COLORS = ['#2b4d52', '#1f3a3e', '#16282b', '#3a636a'];
+const ACCENT_COLORS = ['#1b2a3d', '#16202e', '#253a52', '#33506d'];
 
 const EMPTY_FORM = {
   destination: '',
@@ -145,7 +145,7 @@ export default function Dashboard() {
               <div>
                 <p className="font-semibold text-ink">{pkg.flag} {pkg.destination}</p>
                 <p className="text-sm text-ink-soft">
-                  {pkg.dateFrom}–{pkg.dateTo} · {pkg.hotel} · {pkg.price.toLocaleString()} ₪
+                  {pkg.dateFrom}-{pkg.dateTo} · {pkg.hotel} · {pkg.price.toLocaleString()} ₪
                 </p>
               </div>
               <div className="flex gap-2">

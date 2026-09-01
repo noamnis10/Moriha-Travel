@@ -6,7 +6,7 @@ const SERVICES = [
   { name: 'תכנון מסלול אישי', desc: 'נבנה עבורכם מסלול טיול המותאם בדיוק להעדפות, לתקציב וללו״ז שלכם.' },
   { name: 'טיסות במחירים משתלמים', desc: 'השוואת מחירי טיסות ומציאת המסלולים המשתלמים והנוחים ביותר עבורכם.' },
   { name: 'הזמנת מלונות ונופש', desc: 'בחירה קפדנית של מלונות ונופש שעומדים בסטנדרט שאנחנו היינו רוצים לקבל בעצמנו.' },
-  { name: 'חבילות משפחות וזוגות', desc: 'חבילות מותאמות למשפחות, זוגות וקבוצות — כולל פעילויות וחוויות ייחודיות ליעד.' },
+  { name: 'חבילות משפחות וזוגות', desc: 'חבילות מותאמות למשפחות, זוגות וקבוצות, כולל פעילויות וחוויות ייחודיות ליעד.' },
   { name: 'ויזות וביטוח נסיעות', desc: 'ייעוץ לגבי ויזות, ביטוחי נסיעה ודרישות כניסה, כדי שתגיעו מוכנים ורגועים.' },
   { name: 'ליווי אישי 24/7', desc: 'זמינים בוואטסאפ לאורך כל הטיול - לכל שאלה, שינוי או מקרה חירום.' },
 ];
@@ -18,8 +18,7 @@ export default function Services() {
   return (
     <section id="services" className="scroll-mt-24 bg-paper-soft py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-teal-700">מה אנחנו מציעים</p>
-        <RevealHeading className="text-3xl font-semibold text-ink sm:text-4xl">השירותים שלנו</RevealHeading>
+        <RevealHeading className="text-3xl font-semibold text-ink sm:text-4xl">מה כלול בליווי שלנו</RevealHeading>
 
         <div ref={reveal.ref} className={`mt-10 grid grid-cols-1 gap-10 lg:grid-cols-2 ${reveal.className}`}>
           <ul className="flex flex-col">

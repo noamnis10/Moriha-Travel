@@ -13,11 +13,11 @@ import RevealHeading from '../components/RevealHeading';
 const VALUES = [
   {
     title: 'מסלול, לא תבנית',
-    body: 'אנחנו לא מוכרים חבילות מדף. כל טיול נבנה סביב מי שנוסע — התקציב, הקצב, והדברים שחשובים לכם דווקא בטיול הזה.',
+    body: 'אנחנו לא מוכרים חבילות מדף. כל טיול נבנה סביב מי שנוסע: התקציב, הקצב, והדברים שחשובים לכם דווקא בטיול הזה.',
   },
   {
     title: 'שקיפות במחיר',
-    body: 'המחיר שאתם רואים הוא המחיר שאתם משלמים. אין עמלות נסתרות, ואם משהו משתנה — אתם שומעים על זה מאיתנו קודם.',
+    body: 'המחיר שאתם רואים הוא המחיר שאתם משלמים. אין עמלות נסתרות, ואם משהו משתנה, אתם שומעים על זה מאיתנו קודם.',
   },
   {
     title: 'זמינים באמת',
@@ -66,11 +66,11 @@ export default function AboutPage() {
               <RevealHeading className="text-3xl font-semibold text-ink sm:text-4xl">איך זה התחיל</RevealHeading>
               <p className="mt-5 text-ink-soft">
                 Moriah Travel קמה מתוך תסכול פשוט: יותר מדי חברות נסיעות מוכרות ללקוחות את אותה חבילה, בשינויים קוסמטיים,
-                בלי להקשיב למה שהם באמת רוצים. החלטנו לעשות את זה אחרת — לשבת עם כל לקוח, להבין מה חשוב לו בטיול הזה,
+                בלי להקשיב למה שהם באמת רוצים. החלטנו לעשות את זה אחרת: לשבת עם כל לקוח, להבין מה חשוב לו בטיול הזה,
                 ולבנות מסלול שמתאים בדיוק לו.
               </p>
               <p className="mt-4 text-ink-soft">
-                היום אנחנו צוות קטן שמלווה כל הזמנה מהשלב הראשון ועד החזרה הביתה — כולל טיסות, מלונות, ביטוח וכל שאלה
+                היום אנחנו צוות קטן שמלווה כל הזמנה מהשלב הראשון ועד החזרה הביתה, כולל טיסות, מלונות, ביטוח וכל שאלה
                 שעולה באמצע הדרך. אין מוקד טלפוני ואין תסריט קבוע. יש אנשים שזמינים בוואטסאפ.
               </p>
             </div>
@@ -79,7 +79,6 @@ export default function AboutPage() {
 
         <section className="bg-paper-soft py-20">
           <div ref={revealValues.ref} className="mx-auto max-w-6xl px-6">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-teal-700">מה מנחה אותנו</p>
             <RevealHeading className="text-3xl font-semibold text-ink sm:text-4xl">שלושה עקרונות שאנחנו לא מתפשרים עליהם</RevealHeading>
 
             <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -105,7 +104,7 @@ export default function AboutPage() {
         <section className="bg-paper py-20">
           <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 px-6 text-center">
             <RevealHeading className="text-3xl font-semibold text-ink sm:text-4xl">בואו נכיר, ונתחיל לתכנן</RevealHeading>
-            <p className="max-w-md text-ink-soft">ספרו לנו קצת על עצמכם ועל הטיול שאתם מדמיינים — נחזור עם הצעה אישית.</p>
+            <p className="max-w-md text-ink-soft">ספרו לנו קצת על עצמכם ועל הטיול שאתם מדמיינים. נחזור עם הצעה אישית.</p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Button asChild size="lg">
                 <a href={waLink('שלום, קראתי על מוריה טראבל ואשמח לשוחח')} target="_blank" rel="noopener noreferrer">

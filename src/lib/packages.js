@@ -9,7 +9,7 @@ export const DEFAULT_PACKAGES = [
     flag: '🇬🇪',
     dateFrom: '6.9.26',
     dateTo: '9.9.26',
-    flightInfo: 'טיסות אל על — הלוך 05:15 · חזור 09:35',
+    flightInfo: 'טיסות אל על: הלוך 05:15 · חזור 09:35',
     baggage: 'מזוודה + טרולי',
     hotel: 'Piazza Four Colours',
     stars: 4,
@@ -17,7 +17,7 @@ export const DEFAULT_PACKAGES = [
     price: 1834,
     priceNote: 'לאדם בחדר זוגי',
     image: BATUMI_IMAGE,
-    accentColor: '#2b4d52',
+    accentColor: '#1b2a3d',
   },
   {
     id: 'limassol-2026-09',
@@ -33,7 +33,7 @@ export const DEFAULT_PACKAGES = [
     price: 2700,
     priceNote: 'לאדם בחדר זוגי',
     image: LIMASSOL_IMAGE,
-    accentColor: '#1f3a3e',
+    accentColor: '#16202e',
   },
 ];
 

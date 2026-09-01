@@ -13,7 +13,6 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="scroll-mt-24 bg-teal-950 py-24 text-white">
       <div className="mx-auto max-w-6xl px-6">
-        <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-teal-100">לקוחות מספרים</p>
         <RevealHeading className="text-3xl font-semibold text-white sm:text-4xl">המלצות מנוסעים שלנו</RevealHeading>
 
         <div ref={reveal.ref} className={`mt-10 grid grid-cols-1 gap-6 md:grid-cols-3 ${reveal.className}`}>

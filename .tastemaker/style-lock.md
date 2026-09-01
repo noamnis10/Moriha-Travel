@@ -201,6 +201,52 @@ pages (see `src/components/Navbar.jsx`).
 - No illustrations used — the client asked to keep photography-only
   rather than populate `~/.ideagram/undraw/`.
 
+## Third pass — anti-slop quality pass (`design-taste-frontend`)
+
+Client explicitly chose: preserve the navy+gold brand (no palette/type reset),
+aesthetic direction "premium consumer: quiet, luxurious, warm-minimalist",
+scope "targeted evolution" on the existing structure, and flagged the Hero
+and Pricing cards as feeling generic. Ran a self-audit against that skill's
+rules rather than asking for more input, since the codebase was already
+fully known. Concrete changes:
+
+- **Eyebrow restraint**: the skill caps small uppercase section labels at
+  1 per 3 sections; the home page had 7 across 8 sections. Cut to 3 (Hero,
+  Pricing, ContactForm — evenly spaced), removed from About, Services,
+  Testimonials, Faq. Same fix on AboutPage's values section (was adjacent
+  to its own hero eyebrow, violating the "next 2 sections" rule).
+- **Hero recomposed**: replaced the full-bleed photo + dark scrim + text
+  overlay (the single most common travel-site pattern, and the client's
+  specific complaint) with an asymmetric split — message on a solid navy
+  ground, the real Santorini photo contained in a framed panel (echoing
+  About's photo treatment) with a small gold-ringed monogram badge.
+  `min-h-screen` → `min-h-[100dvh]` for viewport stability. Scroll parallax
+  now lives inside the frame instead of on a full-bleed background.
+- **Pricing recomposed**: replaced three visually-identical package cards
+  (a banned pattern) with a featured/rest split — the cheapest/recommended
+  package gets a large two-column feature card (bigger photo, bigger price
+  display, full feature list), remaining packages collapse into a compact
+  horizontal list-row (thumbnail + name + price only, linking to the full
+  detail page for everything else). Also fixed a duplicate-state bug: the
+  "ask us for a custom trip" fallback card and the "no results for X"
+  empty state could both render at once; now mutually exclusive.
+- **Color Consistency Lock fix**: `src/lib/packages.js` and
+  `src/pages/Dashboard.jsx`'s package accent colors were still the old
+  teal-derived hex values (`#2b4d52` etc.) from before this project's navy
+  repricing pass — never updated at the time. Swapped to the actual locked
+  navy tokens (`#1b2a3d`, `#16202e`, `#253a52`, `#33506d`).
+- **Em-dash ban**: the skill bans `—`/`–` outright in visible copy (zero
+  tolerance, no "sparingly" allowance). Found and rewritten across ~16
+  strings (About, AboutPage, Faq, Services, Pricing, ThankYou, package
+  data) using a comma, colon, or period depending on what the sentence
+  needed. Date ranges (`{from}–{to}`) switched from en-dash to a plain
+  hyphen. Left untouched: `—` inside JS/CSS code comments, which aren't
+  user-visible copy and the rule doesn't target.
+- **Shape consistency**: kept `rounded-[2rem]` reserved for photo frames
+  only (Hero, About) and `rounded-3xl` for content cards (the new featured
+  Pricing card included), rather than let the two mix on the same
+  component tier.
+
 ## Open items / honest gaps
 
 - Testimonials are still placeholder copy (flagged since the first pass).
