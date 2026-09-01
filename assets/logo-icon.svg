@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Moriah Travel">
+  <defs>
+    <linearGradient id="mt-g1" x1="10%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%" stop-color="#4C6EF5"/>
+      <stop offset="50%" stop-color="#8B3FC4"/>
+      <stop offset="100%" stop-color="#E0399A"/>
+    </linearGradient>
+    <linearGradient id="mt-g2" x1="90%" y1="0%" x2="10%" y2="100%">
+      <stop offset="0%" stop-color="#4C6EF5"/>
+      <stop offset="55%" stop-color="#8B3FC4"/>
+      <stop offset="100%" stop-color="#E0399A"/>
+    </linearGradient>
+    <radialGradient id="mt-knot" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9FE1F7"/>
+      <stop offset="100%" stop-color="#4FB6E8"/>
+    </radialGradient>
+  </defs>
+  <path d="M120,66 C160,26 210,44 210,98 C210,158 168,198 126,232" fill="none" stroke="url(#mt-g1)" stroke-width="30" stroke-linecap="round"/>
+  <path d="M112,66 C72,26 30,46 30,98 C30,142 60,170 92,188" fill="none" stroke="url(#mt-g2)" stroke-width="28" stroke-linecap="round"/>
+  <path d="M92,188 L58,204 L77,212 L70,231 Z" fill="#6A4FCB"/>
+  <circle cx="117" cy="62" r="19" fill="url(#mt-knot)"/>
+</svg>
