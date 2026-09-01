@@ -1,0 +1,6 @@
+2026-09-01 | project: Moriah Travel | axis: color/palette
+choice: "premium" mood palette (deep navy #1B2A3D + warm gold #C0924A on warm ivory #F7F5F1) vs. reverting to the prior teal-ocean palette
+asked: "האם הפלטה החדשה (נאבי+זהב) טובה יותר עבורך מהטורקיז הקודם, או שתרצה לחזור לטורקיז?"
+answer: kept — "נאבי וזהב טוב"
+status: resolved (kept)
+scope: project-specific brand decision for Moriah Travel — not promoted to ~/.tastemaker/profile.md (this is a client's brand color choice, not a durable personal taste axis that would generalize to other unrelated projects).
