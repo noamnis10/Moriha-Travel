@@ -10,15 +10,15 @@ export default function Testimonials() {
   const reveal = useReveal();
 
   return (
-    <section id="testimonials" className="bg-teal-950 py-24 text-white">
+    <section id="testimonials" className="scroll-mt-24 bg-teal-950 py-24 text-white">
       <div className="mx-auto max-w-6xl px-6">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-teal-100">לקוחות מספרים</p>
         <h2 className="text-3xl font-semibold text-white sm:text-4xl">המלצות מנוסעים שלנו</h2>
 
         <div ref={reveal.ref} className={`mt-10 grid grid-cols-1 gap-6 md:grid-cols-3 ${reveal.className}`}>
           {TESTIMONIALS.map((t) => (
-            <blockquote key={t.name} className="rounded-3xl border border-white/10 bg-white/5 p-7">
-              <div className="mb-3.5 text-gold" aria-hidden="true">★★★★★</div>
+            <blockquote key={t.name} className="rounded-3xl border border-white/10 bg-white/5 p-6">
+              <div className="mb-3 text-gold" aria-hidden="true">★★★★★</div>
               <p className="text-white/90">"{t.quote}"</p>
               <footer className="mt-4 font-semibold text-white">{t.name}</footer>
             </blockquote>

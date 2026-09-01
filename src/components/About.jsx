@@ -12,8 +12,8 @@ export default function About() {
   const reveal = useReveal();
 
   return (
-    <section id="about" className="bg-paper py-24">
-      <div ref={reveal.ref} className={`mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 px-6 lg:grid-cols-[0.8fr_1.2fr] ${reveal.className}`}>
+    <section id="about" className="scroll-mt-24 bg-paper py-24">
+      <div ref={reveal.ref} className={`mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-[0.8fr_1.2fr] ${reveal.className}`}>
         <div className="order-first flex justify-center lg:order-none">
           <div className="relative w-full max-w-sm">
             <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem] shadow-lg">
@@ -23,7 +23,7 @@ export default function About() {
                 loading="lazy"
                 className="h-full w-full object-cover"
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-teal-950/35 via-transparent to-teal-800/10" />
+              <div className="pointer-events-none absolute inset-0 bg-teal-950/15" />
             </div>
             <div className="absolute -bottom-6 -start-6 flex h-20 w-20 items-center justify-center rounded-full border border-border bg-paper shadow-lg">
               <img src={logoIcon} alt="" className="w-1/2" />
@@ -40,7 +40,7 @@ export default function About() {
             בלי הפתעות, בלי אותיות קטנות — רק שירות אישי ואמין.
           </p>
 
-          <div className="mt-9 flex flex-wrap gap-10">
+          <div className="mt-8 flex flex-wrap gap-10">
             {STATS.map((s) => (
               <div key={s.label} className="flex flex-col">
                 <span className="font-heading text-3xl font-bold text-teal-800">{s.num}</span>

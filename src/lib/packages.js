@@ -17,8 +17,7 @@ export const DEFAULT_PACKAGES = [
     price: 1834,
     priceNote: 'לאדם בחדר זוגי',
     image: BATUMI_IMAGE,
-    gradientFrom: '#2b4d52',
-    gradientTo: '#4c7d84',
+    accentColor: '#2b4d52',
   },
   {
     id: 'limassol-2026-09',
@@ -34,8 +33,7 @@ export const DEFAULT_PACKAGES = [
     price: 2700,
     priceNote: 'לאדם בחדר זוגי',
     image: LIMASSOL_IMAGE,
-    gradientFrom: '#1f3a3e',
-    gradientTo: '#3a636a',
+    accentColor: '#1f3a3e',
   },
 ];
 

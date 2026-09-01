@@ -15,7 +15,7 @@ export default function Services() {
   const reveal = useReveal();
 
   return (
-    <section id="services" className="bg-paper-soft py-24">
+    <section id="services" className="scroll-mt-24 bg-paper-soft py-24">
       <div className="mx-auto max-w-6xl px-6">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-teal-700">מה אנחנו מציעים</p>
         <h2 className="text-3xl font-semibold text-ink sm:text-4xl">השירותים שלנו</h2>
@@ -28,18 +28,22 @@ export default function Services() {
                   onMouseEnter={() => setActive(i)}
                   onFocus={() => setActive(i)}
                   onClick={() => setActive(i)}
-                  className={`flex w-full items-center justify-between rounded-lg px-5 py-5 text-right transition-colors ${
+                  className={`flex w-full items-center justify-between rounded-lg px-4 py-4 text-right transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
                     active === i ? 'bg-teal-950 text-white' : 'bg-transparent text-ink'
                   }`}
                 >
                   <span className="text-base font-semibold">{s.name}</span>
-                  <span className={`transition-opacity ${active === i ? 'opacity-100' : 'opacity-0'}`}>←</span>
+                  <span
+                    className={`transition-opacity duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${active === i ? 'opacity-100' : 'opacity-0'}`}
+                  >
+                    ←
+                  </span>
                 </button>
               </li>
             ))}
           </ul>
 
-          <div className="flex min-h-64 items-center rounded-3xl bg-gradient-to-br from-teal-800 to-teal-500 p-11 text-white">
+          <div className="flex min-h-64 items-center rounded-3xl bg-teal-900 p-10 text-white">
             <p className="font-heading text-2xl">{SERVICES[active].desc}</p>
           </div>
         </div>

@@ -3,12 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 import { DEFAULT_PACKAGES, loadPackages, resetPackages, savePackages } from '../lib/packages';
 
-const GRADIENTS = [
-  ['#2b4d52', '#4c7d84'],
-  ['#1f3a3e', '#3a636a'],
-  ['#16282b', '#2b4d52'],
-  ['#3a636a', '#6b9aa1'],
-];
+const ACCENT_COLORS = ['#2b4d52', '#1f3a3e', '#16282b', '#3a636a'];
 
 const EMPTY_FORM = {
   destination: '',
@@ -55,13 +50,12 @@ export default function Dashboard() {
     if (editingId) {
       persist(packages.map((p) => (p.id === editingId ? { ...p, ...form, price: Number(form.price) } : p)));
     } else {
-      const [gradientFrom, gradientTo] = GRADIENTS[packages.length % GRADIENTS.length];
+      const accentColor = ACCENT_COLORS[packages.length % ACCENT_COLORS.length];
       const newPackage = {
         ...form,
         id: `${Date.now()}`,
         price: Number(form.price),
-        gradientFrom,
-        gradientTo,
+        accentColor,
       };
       persist([...packages, newPackage]);
     }

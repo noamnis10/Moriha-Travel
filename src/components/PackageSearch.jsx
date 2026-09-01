@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, Plane, Users, X } from 'lucide-react';
+import { Airplane, MapPin, Users, X } from '@phosphor-icons/react';
 import { Button } from './ui/button';
 import { Separator } from './ui/separator';
 import { usePackageSearch } from '../context/PackageSearchContext';
@@ -32,10 +32,10 @@ export default function PackageSearch({ className }) {
       onSubmit={onSearch}
       className={cn('w-full max-w-md overflow-hidden rounded-3xl border border-border bg-paper text-ink shadow-2xl', className)}
     >
-      <div className="space-y-5 p-6">
-        <div className="grid gap-1.5">
-          <label htmlFor="pkg-destination" className="flex items-center gap-1.5 text-sm text-ink-soft">
-            <MapPin className="h-3.5 w-3.5" /> יעד
+      <div className="space-y-4 p-6">
+        <div className="grid gap-1">
+          <label htmlFor="pkg-destination" className="flex items-center gap-1 text-sm text-ink-soft">
+            <MapPin className="h-4 w-4" /> יעד
           </label>
           <input
             id="pkg-destination"
@@ -49,7 +49,7 @@ export default function PackageSearch({ className }) {
         <Separator />
 
         <div className="grid grid-cols-2 gap-4">
-          <div className="grid gap-1.5">
+          <div className="grid gap-1">
             <label htmlFor="pkg-date-from" className="text-sm text-ink-soft">תאריך יציאה</label>
             <input
               id="pkg-date-from"
@@ -59,7 +59,7 @@ export default function PackageSearch({ className }) {
               className="w-full truncate border-0 border-b border-border bg-transparent p-0 pb-1 text-base font-semibold text-ink outline-none focus:border-teal-700"
             />
           </div>
-          <div className="relative grid gap-1.5">
+          <div className="relative grid gap-1">
             <label htmlFor="pkg-date-to" className="text-sm text-ink-soft">תאריך חזרה</label>
             <input
               id="pkg-date-to"
@@ -83,9 +83,9 @@ export default function PackageSearch({ className }) {
 
         <Separator />
 
-        <div className="grid gap-1.5">
-          <label htmlFor="pkg-travelers" className="flex items-center gap-1.5 text-sm text-ink-soft">
-            <Users className="h-3.5 w-3.5" /> נוסעים
+        <div className="grid gap-1">
+          <label htmlFor="pkg-travelers" className="flex items-center gap-1 text-sm text-ink-soft">
+            <Users className="h-4 w-4" /> נוסעים
           </label>
           <select
             id="pkg-travelers"
@@ -103,7 +103,7 @@ export default function PackageSearch({ className }) {
 
       <div className="bg-paper-soft p-4">
         <Button type="submit" size="lg" className="w-full">
-          <Plane className="ms-2 h-4 w-4" />
+          <Airplane className="ms-2 h-4 w-4" />
           חיפוש חבילות
         </Button>
       </div>

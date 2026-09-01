@@ -50,10 +50,29 @@ h1, h2, h3, .font-heading {
 
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(4rem);
+  filter: blur(6px);
+  transition: opacity 0.8s cubic-bezier(0.32, 0.72, 0, 1), transform 0.8s cubic-bezier(0.32, 0.72, 0, 1),
+    filter 0.8s cubic-bezier(0.32, 0.72, 0, 1);
 }
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+  filter: blur(0);
+}
+
+.word-muted {
+  opacity: 0.3;
+  transition: opacity 0.6s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.word-active {
+  opacity: 1;
+  transition: opacity 0.6s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.heading-gradient {
+  background: linear-gradient(90deg, #ffffff, #9b9b9b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
