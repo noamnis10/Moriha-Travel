@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Check, X } from '@phosphor-icons/react';
 import { loadPackages } from '../lib/packages';
 import { waLink } from '../lib/whatsapp';
@@ -8,7 +9,7 @@ import { Button } from './ui/button';
 
 function Stars({ count }) {
   return (
-    <span className="text-gold" aria-hidden="true">
+    <span className="text-gold-text" aria-hidden="true">
       {'★'.repeat(count)}
       <span className="text-border">{'★'.repeat(5 - count)}</span>
     </span>
@@ -60,7 +61,7 @@ export default function Pricing() {
             return (
               <article
                 key={pkg.id}
-                className={`flex flex-col overflow-hidden rounded-3xl border bg-paper shadow-sm transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-1.5 hover:shadow-lg ${
+                className={`flex flex-col overflow-hidden rounded-3xl border bg-paper shadow-sm transition-[color,background-color,border-color,transform,box-shadow] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-1.5 hover:shadow-lg ${
                   isRecommended ? 'border-teal-700 ring-1 ring-teal-700' : 'border-border'
                 }`}
               >
@@ -125,6 +126,13 @@ export default function Pricing() {
                       </a>
                     </Button>
                   </div>
+                  <Link
+                    to={`/packages/${pkg.id}`}
+                    className="inline-flex items-center gap-1 text-sm font-semibold text-teal-700 hover:underline"
+                  >
+                    לפרטים נוספים על היעד
+                    <span aria-hidden="true">←</span>
+                  </Link>
                 </div>
               </article>
             );

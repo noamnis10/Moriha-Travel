@@ -25,7 +25,7 @@ export default function Faq() {
             href={waLink('שלום, יש לי שאלה לגבי הזמנת טיול')}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 inline-flex min-h-11 items-center justify-center rounded-full border-2 border-ink px-6 text-sm font-semibold text-ink transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-ink hover:text-white active:scale-[0.98]"
+            className="mt-4 inline-flex min-h-11 items-center justify-center rounded-full border-2 border-ink px-6 text-sm font-semibold text-ink transition-[color,background-color,border-color,transform,box-shadow] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-ink hover:text-white active:scale-[0.98]"
           >
             שאלו אותנו
           </a>

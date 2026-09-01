@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logoIcon from '../assets/logo-icon.svg';
 import { ABOUT_IMAGE } from '../lib/media';
 import { useReveal } from '../hooks/useReveal';
@@ -48,6 +49,11 @@ export default function About() {
               </div>
             ))}
           </div>
+
+          <Link to="/about" className="mt-8 inline-flex items-center gap-2 text-base font-semibold text-teal-700 hover:underline">
+            קראו עוד עלינו
+            <span aria-hidden="true">←</span>
+          </Link>
         </div>
       </div>
     </section>

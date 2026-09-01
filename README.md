@@ -23,25 +23,34 @@ npm run build
 
 ```
 src/
-  components/     # Navbar, Hero, About, Services, Pricing, Testimonials, Faq, ContactForm, Footer, WhatsAppFab
+  components/     # Navbar, Hero, About, Services, Pricing, Testimonials, Faq, ContactForm, Footer, WhatsAppFab, TaglineReveal
     ui/           # button.jsx, separator.jsx - shadcn-style primitives (מבוססים על רכיבי 21st.dev אמיתיים)
     PackageSearch.jsx # שורת החיפוש בהירו - מבוסס על רכיב "Flight Search" מ-21st.dev
   pages/
-    Home.jsx      # עמוד הנחיתה הראשי
-    Dashboard.jsx # מסך ניהול חבילות (ראו הערה למטה)
+    Home.jsx        # עמוד הנחיתה הראשי
+    AboutPage.jsx    # עמוד "אודות" מלא ונפרד (/about)
+    PackageDetail.jsx # עמוד פרטים מלא לכל יעד/חבילה (/packages/:id)
+    ThankYou.jsx     # מסך תודה לאחר שליחת פנייה (/thank-you)
+    NotFound.jsx     # 404 ממותג
+    Dashboard.jsx    # מסך ניהול חבילות (ראו הערה למטה)
   context/
     PackageSearchContext.jsx # מעביר את החיפוש מההירו לסינון בפועל בסקשן החבילות
   lib/
     packages.js   # נתוני החבילות + שמירה/טעינה מ-localStorage
     whatsapp.js   # בניית לינקים לוואטסאפ
     utils.js      # cn() - עזר למיזוג classNames (shadcn convention)
+    motion.js     # אתחול GSAP + ScrollTrigger (מנוע האנימציה של כל האתר)
   hooks/
-    useReveal.js  # אנימציית הופעה בגלילה
+    useReveal.js  # אנימציית הופעה בגלילה, מבוססת GSAP + ScrollTrigger
 ```
 
 ## צבעי המותג
 
-הפלטה מבוססת על תמונת ההשראה ששימשה לעיצוב (גוני טורקיז-אוקיינוס כהים, לבן ושחור), ולא על צבעי הלוגו המקורי. הטוקנים מוגדרים ב-`src/index.css` תחת `@theme` (Tailwind v4): `teal-950..50`, `ink`, `paper`, `gold`. הלוגו עצמו (`src/assets/logo.svg`) נשאר בצבעיו המקוריים כפי שסופק.
+**עודכן**: הפלטה נגזרה מחדש דרך שיטת ה-"tastemaker" (מוד "premium" - נאבי כהה + זהב על רקע שנהב חם), במקום פלטת הטורקיז הקודמת. פירוט מלא, כולל טבלת ניגודיות WCAG לכל צירוף צבעים מותר, נמצא ב-`.tastemaker/style-lock.md`. הטוקנים מוגדרים ב-`src/index.css` תחת `@theme` (Tailwind v4): `teal-950..50` (עכשיו בגווני נאבי), `ink`, `paper`, `gold`/`gold-text`. הלוגו עצמו (`src/assets/logo.svg`) נשאר בצבעיו המקוריים כפי שסופק.
+
+## עמודים חדשים ואנימציה (tastemaker)
+
+לפי בקשה מפורשת, נוספו שלושה עמודים חדשים ושודרגה מערכת האנימציה של כל האתר ל-GSAP + ScrollTrigger (במקום IntersectionObserver פשוט). פירוט מלא ב-`.tastemaker/style-lock.md`, כולל הערת שקיפות: **סקריפטי וקבצי הרפרנס של סקיל ה-tastemaker (`generate_palette.py`, `check_contrast.py`, `fetch_photos.py` וכו') לא היו זמינים בסביבה הזו** - רק הוראות ה-SKILL.md העליון. הפלטה, המבנה והחלטות העיצוב נגזרו ידנית לפי אותה שיטה, לא ע"י הרצת הסקריפטים בפועל. כמו כן, Openverse ו-Iconify (מקורות התמונות/אייקונים החינמיים של הסקיל) חסומים ברשת של סביבת הפיתוח הזו - לא נוספו תמונות סטוק חדשות בסבב הזה.
 
 ## מסך ניהול חבילות (`/dashboard`)
 

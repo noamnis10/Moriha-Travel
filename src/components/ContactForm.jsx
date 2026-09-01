@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { waLink } from '../lib/whatsapp';
 import { useReveal } from '../hooks/useReveal';
 
 export default function ContactForm() {
   const reveal = useReveal();
+  const navigate = useNavigate();
   const [form, setForm] = useState({ name: '', phone: '', destination: '', message: '' });
 
   const update = (field) => (e) => setForm((f) => ({ ...f, [field]: e.target.value }));
@@ -16,6 +18,7 @@ export default function ContactForm() {
     if (form.destination) lines.push(`יעד מבוקש: ${form.destination}`);
     if (form.message) lines.push(`הודעה: ${form.message}`);
     window.open(waLink(lines.join('\n')), '_blank', 'noopener,noreferrer');
+    navigate('/thank-you', { state: { destination: form.destination || undefined } });
   };
 
   return (
@@ -53,7 +56,7 @@ export default function ContactForm() {
           </div>
           <button
             type="submit"
-            className="min-h-11 rounded-full bg-teal-900 px-6 text-base font-semibold text-white transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-teal-800 active:scale-[0.98]"
+            className="min-h-11 rounded-full bg-teal-900 px-6 text-base font-semibold text-white transition-[color,background-color,border-color,transform,box-shadow] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-teal-800 active:scale-[0.98]"
           >
             שליחה בוואטסאפ
           </button>

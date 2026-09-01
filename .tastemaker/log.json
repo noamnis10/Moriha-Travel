@@ -1,0 +1,22 @@
+{
+  "builds": [
+    {
+      "date": "2026-09-01",
+      "project": "Moriah Travel",
+      "mood": "premium",
+      "paletteSeed": "hand-derived, navy #1B2A3D + gold #C0924A on warm ivory #F7F5F1 (see style-lock.md Color contract)",
+      "macrostructure": "Feature Stack (hero, tagline reveal, about teaser, services, pricing, testimonials, faq, contact)",
+      "archetypes": {
+        "nav": "floating island pill -> fullscreen glass menu",
+        "hero": "full-bleed photo, single primary CTA (WhatsApp), secondary text link",
+        "feature": "interactive list + preview panel (services)",
+        "proof": "3-card testimonial grid, dark navy section",
+        "cta": "final contact form + WhatsApp",
+        "footer": "3-column dark navy footer"
+      },
+      "newPages": ["/about", "/packages/:id", "/thank-you", "404 catch-all"],
+      "motionEngine": "GSAP + ScrollTrigger",
+      "note": "First tastemaker pass on this project — no prior log to rotate against. Scripts/references from the tastemaker skill were not present in this environment; palette and structure were hand-derived following the same method."
+    }
+  ]
+}

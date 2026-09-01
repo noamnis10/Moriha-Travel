@@ -28,7 +28,7 @@ export default function Services() {
                   onMouseEnter={() => setActive(i)}
                   onFocus={() => setActive(i)}
                   onClick={() => setActive(i)}
-                  className={`flex w-full items-center justify-between rounded-lg px-4 py-4 text-right transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+                  className={`flex w-full items-center justify-between rounded-lg px-4 py-4 text-right transition-[color,background-color,border-color,transform,box-shadow] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
                     active === i ? 'bg-teal-950 text-white' : 'bg-transparent text-ink'
                   }`}
                 >

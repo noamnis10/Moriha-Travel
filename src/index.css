@@ -1,24 +1,34 @@
 @import "tailwindcss";
 
+/*
+  Palette: "premium travel" mood — deep navy (trust, night-sky navigation,
+  ocean) + warm brass (vintage boarding passes, hospitality) on a warm
+  ivory ground. Chosen over "warm cream + terracotta" (an overused AI
+  default) and over a single-accent near-black scheme, to read as a
+  boutique paid concierge service rather than a generic SaaS template.
+  Contrast verified by hand (WCAG relative luminance): see commit notes.
+*/
 @theme {
-  --color-teal-950: #16282b;
-  --color-teal-900: #1f3a3e;
-  --color-teal-800: #2b4d52;
-  --color-teal-700: #3a636a;
-  --color-teal-600: #4c7d84;
-  --color-teal-500: #6b9aa1;
-  --color-teal-100: #e4edee;
-  --color-teal-50: #f2f6f6;
+  --color-teal-950: #16202e;
+  --color-teal-900: #1b2a3d;
+  --color-teal-800: #253a52;
+  --color-teal-700: #33506d;
+  --color-teal-600: #456885;
+  --color-teal-500: #6488a0;
+  --color-teal-100: #dce4ea;
+  --color-teal-50: #eff3f6;
 
-  --color-ink: #14171a;
-  --color-ink-soft: #4d5457;
+  --color-ink: #201d1a;
+  --color-ink-soft: #5c5650;
 
   --color-paper: #ffffff;
-  --color-paper-soft: #f6f5f2;
-  --color-border: #e4e1da;
+  --color-paper-soft: #f7f5f1;
+  --color-border: #d9d2c3;
+  --color-border-strong: #998c70;
 
-  --color-gold: #b8935a;
-  --color-gold-soft: #e7d8c2;
+  --color-gold: #c0924a;
+  --color-gold-text: #8a6530;
+  --color-gold-soft: #f0e4d0;
 
   --font-heading: "Frank Ruhl Libre", Georgia, serif;
   --font-body: "Heebo", Arial, sans-serif;
@@ -48,26 +58,10 @@ h1, h2, h3, .font-heading {
   }
 }
 
-.reveal {
+/* Baseline hidden state so there's no flash of fully-visible content
+   before GSAP's ScrollTrigger callback takes over on mount. */
+.reveal-gsap {
   opacity: 0;
-  transform: translateY(4rem);
-  filter: blur(6px);
-  transition: opacity 0.8s cubic-bezier(0.32, 0.72, 0, 1), transform 0.8s cubic-bezier(0.32, 0.72, 0, 1),
-    filter 0.8s cubic-bezier(0.32, 0.72, 0, 1);
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-  filter: blur(0);
-}
-
-.word-muted {
-  opacity: 0.3;
-  transition: opacity 0.6s cubic-bezier(0.32, 0.72, 0, 1);
-}
-.word-active {
-  opacity: 1;
-  transition: opacity 0.6s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .heading-gradient {
