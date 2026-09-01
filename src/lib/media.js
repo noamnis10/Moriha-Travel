@@ -3,9 +3,9 @@
 // files could not be downloaded and self-hosted in this repo. Swap these for
 // self-hosted copies in `public/media/` if you want independence from that
 // third-party CDN long-term.
-
-export const HERO_VIDEO =
-  'https://d8j0ntlcm91z4.cloudfront.net/user_3GuTKJww2VXhnvbh7QMXcor9EOg/hf_20260901_083551_4a143b43-daa9-4eb0-863a-3e8443da0dc5.mp4';
+//
+// The hero background is a real photo the client supplied directly, expected
+// at public/media/hero-santorini.jpg (referenced straight from Hero.jsx).
 
 export const ABOUT_IMAGE =
   'https://d8j0ntlcm91z4.cloudfront.net/user_3GuTKJww2VXhnvbh7QMXcor9EOg/hf_20260901_083615_5e06de42-9c9f-4871-bf04-511de85eaa00.png';
