@@ -8,10 +8,11 @@ import Faq from '../components/Faq';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 import WhatsAppFab from '../components/WhatsAppFab';
+import { PackageSearchProvider } from '../context/PackageSearchContext';
 
 export default function Home() {
   return (
-    <>
+    <PackageSearchProvider>
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-0 focus:right-0 focus:z-[100] focus:bg-ink focus:px-5 focus:py-3 focus:text-white">
         דלגו לתוכן הראשי
       </a>
@@ -27,6 +28,6 @@ export default function Home() {
       </main>
       <Footer />
       <WhatsAppFab />
-    </>
+    </PackageSearchProvider>
   );
 }

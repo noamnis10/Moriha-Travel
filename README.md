@@ -24,12 +24,17 @@ npm run build
 ```
 src/
   components/     # Navbar, Hero, About, Services, Pricing, Testimonials, Faq, ContactForm, Footer, WhatsAppFab
+    ui/           # button.jsx, separator.jsx - shadcn-style primitives (מבוססים על רכיבי 21st.dev אמיתיים)
+    PackageSearch.jsx # שורת החיפוש בהירו - מבוסס על רכיב "Flight Search" מ-21st.dev
   pages/
     Home.jsx      # עמוד הנחיתה הראשי
     Dashboard.jsx # מסך ניהול חבילות (ראו הערה למטה)
+  context/
+    PackageSearchContext.jsx # מעביר את החיפוש מההירו לסינון בפועל בסקשן החבילות
   lib/
     packages.js   # נתוני החבילות + שמירה/טעינה מ-localStorage
     whatsapp.js   # בניית לינקים לוואטסאפ
+    utils.js      # cn() - עזר למיזוג classNames (shadcn convention)
   hooks/
     useReveal.js  # אנימציית הופעה בגלילה
 ```
@@ -60,4 +65,9 @@ src/
 
 ## רכיבי 21st.dev
 
-נוסף שרת MCP של 21st.dev לקונפיגורציה הגלובלית של Claude Code (`claude mcp add ... 21st`), אך הוא ידרוש session חדש כדי להיטען בפועל. בסשן עתידי ניתן לבקש מקלוד למשוך רכיבים אמיתיים מהקטלוג של 21st.dev; נכון לעכשיו הרכיבים באתר נבנו ידנית בהשראת אותם דפוסי עיצוב.
+שני רכיבים באתר נמשכו בפועל מהקטלוג של 21st.dev (חשבון free, 2 משיכות ליום) והותאמו לעיצוב ולתוכן של האתר:
+
+- **שורת החיפוש בהירו** (`src/components/PackageSearch.jsx`) — מבוסס על הרכיב "Flight Search", מותאם לחיפוש יעד/תאריכים/נוסעים. החיפוש אמיתי: הוא מסנן בפועל את רשימת החבילות בסקשן "יעדים וחבילות" לפי היעד שהוזן (כולל מסך "לא נמצאה חבילה" עם הצעה לבקש הצעת מחיר בוואטסאפ).
+- **כרטיסי החבילות** (`src/components/Pricing.jsx`) — מבוססים על הרכיב "Pricing table" (כרטיסי מחיר עם רשימת פיצ'רים מסומנת ב-✓, תג "מומלץ" לחבילה המשתלמת ביותר), מותאמים לתוכן טיולים במקום תוכניות מנוי.
+
+שאר הרכיבים באתר (Navbar, Hero, About, Services, Testimonials, Faq, ContactForm, Footer, ומסך ה-Dashboard) נבנו ידנית בהשראת דפוסי עיצוב דומים - ניתן למשוך רכיבים אמיתיים גם עבורם בסשן עתידי, בכפוף למגבלת 2 המשיכות ליום של החשבון החינמי.

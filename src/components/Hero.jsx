@@ -1,11 +1,7 @@
 import { waLink } from '../lib/whatsapp';
+import PackageSearch from './PackageSearch';
 
 export default function Hero() {
-  const onSubmit = (e) => {
-    e.preventDefault();
-    document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <section id="home" className="relative flex min-h-screen items-center overflow-hidden pt-20 text-white">
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-teal-950 via-teal-900 to-teal-700" />
@@ -41,47 +37,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <form
-          onSubmit={onSubmit}
-          className="mt-12 grid max-w-3xl grid-cols-1 gap-4 rounded-3xl bg-white p-5 text-ink shadow-2xl sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_auto] lg:items-end"
-        >
-          <div className="flex flex-col gap-1.5 text-right">
-            <label htmlFor="destination" className="text-xs font-bold text-ink-soft">יעד</label>
-            <input
-              id="destination"
-              type="text"
-              placeholder="לאן בא לכם לטוס?"
-              className="min-h-11 rounded-lg border border-border bg-paper-soft px-3 text-sm outline-none focus:ring-2 focus:ring-teal-700"
-            />
-          </div>
-          <div className="flex flex-col gap-1.5 text-right">
-            <label htmlFor="dates" className="text-xs font-bold text-ink-soft">תאריכים</label>
-            <input
-              id="dates"
-              type="text"
-              placeholder="גמישים / תאריך מדויק"
-              className="min-h-11 rounded-lg border border-border bg-paper-soft px-3 text-sm outline-none focus:ring-2 focus:ring-teal-700"
-            />
-          </div>
-          <div className="flex flex-col gap-1.5 text-right">
-            <label htmlFor="travelers" className="text-xs font-bold text-ink-soft">נוסעים</label>
-            <select
-              id="travelers"
-              className="min-h-11 rounded-lg border border-border bg-paper-soft px-3 text-sm outline-none focus:ring-2 focus:ring-teal-700"
-            >
-              <option>2 מבוגרים</option>
-              <option>מבוגר 1</option>
-              <option>משפחה עם ילדים</option>
-              <option>קבוצה</option>
-            </select>
-          </div>
-          <button
-            type="submit"
-            className="min-h-11 whitespace-nowrap rounded-lg bg-teal-900 px-6 text-sm font-semibold text-white transition hover:bg-teal-800 sm:col-span-2 lg:col-span-1"
-          >
-            חיפוש חבילות
-          </button>
-        </form>
+        <PackageSearch className="mt-12" />
       </div>
     </section>
   );
