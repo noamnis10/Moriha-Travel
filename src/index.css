@@ -13,6 +13,14 @@
   }
 }
 
+@custom-variant group-hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:is(:where(.group):hover *) {
+      @slot;
+    }
+  }
+}
+
 /*
   Palette: "premium travel" mood — deep navy (trust, night-sky navigation,
   ocean) + warm brass (vintage boarding passes, hospitality) on a warm

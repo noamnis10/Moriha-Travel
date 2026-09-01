@@ -1,9 +1,11 @@
 import { useEffect, useRef } from 'react';
 import { waLink } from '../lib/whatsapp';
-import { gsap, EASE } from '../lib/motion';
+import { gsap, ScrollTrigger, EASE } from '../lib/motion';
 import PackageSearch from './PackageSearch';
 
 export default function Hero() {
+  const sectionRef = useRef(null);
+  const bgRef = useRef(null);
   const eyebrowRef = useRef(null);
   const headingRef = useRef(null);
   const subRef = useRef(null);
@@ -32,18 +34,46 @@ export default function Hero() {
       gsap.set(targets, { autoAlpha: 1, y: 0 });
     });
 
-    return () => mm.revert();
+    // Subtle background parallax on scroll — desktop only (the client asked
+    // for a faster/simpler mobile experience, and scroll-linked parallax is
+    // the first thing worth dropping there). The image is oversized (120%
+    // height) so this drift never reveals an edge.
+    mm.add('(prefers-reduced-motion: no-preference) and (min-width: 768px)', () => {
+      gsap.fromTo(
+        bgRef.current,
+        { yPercent: -8 },
+        {
+          yPercent: 8,
+          ease: 'none',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top top', end: 'bottom top', scrub: true },
+        }
+      );
+    });
+
+    return () => {
+      mm.revert();
+      ScrollTrigger.getAll().forEach((trigger) => {
+        if (trigger.trigger === sectionRef.current) trigger.kill();
+      });
+    };
   }, []);
 
   return (
-    <section id="home" className="relative flex min-h-screen scroll-mt-24 items-center overflow-hidden pt-24 text-white">
+    <section
+      ref={sectionRef}
+      id="home"
+      className="relative flex min-h-screen scroll-mt-24 items-center overflow-hidden pt-24 text-white"
+    >
       <div className="absolute inset-0 -z-20 bg-teal-950" />
-      <img
-        src="/media/hero-santorini.jpg"
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 h-full w-full object-cover"
-      />
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <img
+          ref={bgRef}
+          src="/media/hero-santorini.jpg"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-x-0 -top-[10%] h-[120%] w-full object-cover"
+        />
+      </div>
       <div className="absolute inset-0 -z-10 bg-teal-950/55" />
 
       <div className="mx-auto w-full max-w-6xl px-6 py-16">

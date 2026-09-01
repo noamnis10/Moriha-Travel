@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useReveal } from '../hooks/useReveal';
+import RevealHeading from './RevealHeading';
 
 const SERVICES = [
   { name: 'תכנון מסלול אישי', desc: 'נבנה עבורכם מסלול טיול המותאם בדיוק להעדפות, לתקציב וללו״ז שלכם.' },
@@ -18,7 +19,7 @@ export default function Services() {
     <section id="services" className="scroll-mt-24 bg-paper-soft py-24">
       <div className="mx-auto max-w-6xl px-6">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-teal-700">מה אנחנו מציעים</p>
-        <h2 className="text-3xl font-semibold text-ink sm:text-4xl">השירותים שלנו</h2>
+        <RevealHeading className="text-3xl font-semibold text-ink sm:text-4xl">השירותים שלנו</RevealHeading>
 
         <div ref={reveal.ref} className={`mt-10 grid grid-cols-1 gap-10 lg:grid-cols-2 ${reveal.className}`}>
           <ul className="flex flex-col">

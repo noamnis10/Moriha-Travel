@@ -8,6 +8,7 @@ import { ABOUT_IMAGE } from '../lib/media';
 import { waLink } from '../lib/whatsapp';
 import { useReveal } from '../hooks/useReveal';
 import { PackageSearchProvider } from '../context/PackageSearchContext';
+import RevealHeading from '../components/RevealHeading';
 
 const VALUES = [
   {
@@ -45,9 +46,9 @@ export default function AboutPage() {
         <section className="scroll-mt-24 bg-teal-950 pt-32 pb-20 text-white">
           <div className="mx-auto max-w-4xl px-6 text-center">
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.14em] text-teal-100">אודות מוריה טראבל</p>
-            <h1 className="mx-auto max-w-[680px] text-balance text-4xl font-semibold leading-tight sm:text-5xl">
+            <RevealHeading as="h1" className="mx-auto max-w-[680px] text-balance text-4xl font-semibold leading-tight sm:text-5xl">
               סוכנות בוטיק שבנויה סביב אנשים, לא סביב קטלוג
-            </h1>
+            </RevealHeading>
           </div>
         </section>
 
@@ -62,7 +63,7 @@ export default function AboutPage() {
               />
             </div>
             <div>
-              <h2 className="text-3xl font-semibold text-ink sm:text-4xl">איך זה התחיל</h2>
+              <RevealHeading className="text-3xl font-semibold text-ink sm:text-4xl">איך זה התחיל</RevealHeading>
               <p className="mt-5 text-ink-soft">
                 Moriah Travel קמה מתוך תסכול פשוט: יותר מדי חברות נסיעות מוכרות ללקוחות את אותה חבילה, בשינויים קוסמטיים,
                 בלי להקשיב למה שהם באמת רוצים. החלטנו לעשות את זה אחרת — לשבת עם כל לקוח, להבין מה חשוב לו בטיול הזה,
@@ -79,7 +80,7 @@ export default function AboutPage() {
         <section className="bg-paper-soft py-20">
           <div ref={revealValues.ref} className="mx-auto max-w-6xl px-6">
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-teal-700">מה מנחה אותנו</p>
-            <h2 className="text-3xl font-semibold text-ink sm:text-4xl">שלושה עקרונות שאנחנו לא מתפשרים עליהם</h2>
+            <RevealHeading className="text-3xl font-semibold text-ink sm:text-4xl">שלושה עקרונות שאנחנו לא מתפשרים עליהם</RevealHeading>
 
             <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
               {VALUES.map((v) => (
@@ -103,7 +104,7 @@ export default function AboutPage() {
 
         <section className="bg-paper py-20">
           <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 px-6 text-center">
-            <h2 className="text-3xl font-semibold text-ink sm:text-4xl">בואו נכיר, ונתחיל לתכנן</h2>
+            <RevealHeading className="text-3xl font-semibold text-ink sm:text-4xl">בואו נכיר, ונתחיל לתכנן</RevealHeading>
             <p className="max-w-md text-ink-soft">ספרו לנו קצת על עצמכם ועל הטיול שאתם מדמיינים — נחזור עם הצעה אישית.</p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Button asChild size="lg">

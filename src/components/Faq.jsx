@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { waLink } from '../lib/whatsapp';
 import { useReveal } from '../hooks/useReveal';
+import RevealHeading from './RevealHeading';
 
 const FAQS = [
   { q: 'מה כלול במחיר החבילה?', a: 'בכל חבילה מפורט בדיוק מה כלול — לרוב טיסה הלוך ושוב, מלון, ארוחת בוקר וכבודה. הפרטים המדויקים מופיעים בכרטיס החבילה ובאישור ההזמנה.' },
@@ -19,7 +20,7 @@ export default function Faq() {
       <div ref={reveal.ref} className={`mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 lg:grid-cols-[0.8fr_1.2fr] ${reveal.className}`}>
         <div>
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-teal-700">שאלות נפוצות</p>
-          <h2 className="text-3xl font-semibold text-ink sm:text-4xl">כל מה שרציתם לדעת</h2>
+          <RevealHeading className="text-3xl font-semibold text-ink sm:text-4xl">כל מה שרציתם לדעת</RevealHeading>
           <p className="mt-4 max-w-sm text-ink-soft">לא מצאתם תשובה? כתבו לנו בוואטסאפ ונחזור אליכם מהר.</p>
           <a
             href={waLink('שלום, יש לי שאלה לגבי הזמנת טיול')}

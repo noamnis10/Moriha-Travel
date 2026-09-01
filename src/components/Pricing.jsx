@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Check, X } from '@phosphor-icons/react';
+import { ArrowUpRight, Check, X } from '@phosphor-icons/react';
 import { loadPackages } from '../lib/packages';
 import { waLink } from '../lib/whatsapp';
 import { useReveal } from '../hooks/useReveal';
+import RevealHeading from './RevealHeading';
 import { usePackageSearch } from '../context/PackageSearchContext';
 import { Button } from './ui/button';
 
@@ -41,7 +42,7 @@ export default function Pricing() {
     <section id="pricing" className="scroll-mt-24 bg-paper py-24">
       <div className="mx-auto max-w-6xl px-6">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-teal-700">יעדים לתקופה הקרובה</p>
-        <h2 className="text-3xl font-semibold text-ink sm:text-4xl">יעדים וחבילות נבחרות</h2>
+        <RevealHeading className="text-3xl font-semibold text-ink sm:text-4xl">יעדים וחבילות נבחרות</RevealHeading>
         <p className="mt-4 max-w-xl text-ink-soft">
           חבילות מוכנות, במחיר שכולל טיסה ומלון — ומתעדכנות באופן שוטף. מוזמנים לפנות אלינו גם ליעד אחר שלא רשום כאן.
         </p>
@@ -77,6 +78,12 @@ export default function Pricing() {
                   <div className="absolute inset-0 bg-teal-950/45" />
                   <span className="relative text-lg font-bold text-white drop-shadow">
                     {pkg.flag} {pkg.destination}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="absolute end-4 top-4 flex h-9 w-9 translate-y-1 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-y-0 group-hover:opacity-100"
+                  >
+                    <ArrowUpRight weight="bold" className="h-4 w-4" />
                   </span>
                 </div>
 

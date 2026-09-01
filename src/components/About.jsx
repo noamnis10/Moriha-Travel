@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import logoIcon from '../assets/logo-icon.svg';
 import { ABOUT_IMAGE } from '../lib/media';
 import { useReveal } from '../hooks/useReveal';
+import RevealHeading from './RevealHeading';
 
 const STATS = [
   { num: '10+', label: 'שנות ניסיון' },
@@ -34,7 +35,7 @@ export default function About() {
 
         <div>
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-teal-700">אודות מוריה טראבל</p>
-          <h2 className="text-3xl font-semibold text-ink sm:text-4xl">נסיעות שנבנות סביבכם, לא סביב חבילה מוכנה</h2>
+          <RevealHeading className="text-3xl font-semibold text-ink sm:text-4xl">נסיעות שנבנות סביבכם, לא סביב חבילה מוכנה</RevealHeading>
           <p className="mt-5 max-w-2xl text-ink-soft">
             ב-Moriah Travel אנחנו מאמינים שכל טיול צריך להתאים לסיפור שלכם — לא להפך. אנחנו בונים מסלולים
             אישיים, בוחרים בקפידה בתי מלון ויעדים, ומלווים אתכם משלב החלום ועד הנחיתה בחזרה הביתה.

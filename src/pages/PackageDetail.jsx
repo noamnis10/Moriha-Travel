@@ -8,6 +8,7 @@ import { Button } from '../components/ui/button';
 import { loadPackages } from '../lib/packages';
 import { waLink } from '../lib/whatsapp';
 import { PackageSearchProvider } from '../context/PackageSearchContext';
+import RevealHeading from '../components/RevealHeading';
 
 function Stars({ count }) {
   return (
@@ -80,7 +81,7 @@ export default function PackageDetail() {
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 px-6 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-teal-700">מה כלול בחבילה</p>
-              <h2 className="text-3xl font-semibold text-ink">כל הפרטים במקום אחד</h2>
+              <RevealHeading className="text-3xl font-semibold text-ink">כל הפרטים במקום אחד</RevealHeading>
 
               <ul className="mt-8 flex flex-col gap-4 text-ink">
                 <li className="flex items-start gap-3 border-b border-border pb-4">

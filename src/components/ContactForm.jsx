@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { waLink } from '../lib/whatsapp';
 import { useReveal } from '../hooks/useReveal';
+import RevealHeading from './RevealHeading';
 
 export default function ContactForm() {
   const reveal = useReveal();
@@ -26,7 +27,7 @@ export default function ContactForm() {
       <div ref={reveal.ref} className={`mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 lg:grid-cols-[0.9fr_1.1fr] ${reveal.className}`}>
         <div>
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-teal-700">בואו נתחיל לתכנן</p>
-          <h2 className="text-3xl font-semibold text-ink sm:text-4xl">השאירו פרטים ונחזור אליכם</h2>
+          <RevealHeading className="text-3xl font-semibold text-ink sm:text-4xl">השאירו פרטים ונחזור אליכם</RevealHeading>
           <p className="mt-4 max-w-sm text-ink-soft">ספרו לנו קצת על הטיול שאתם מדמיינים, ואנחנו נחזור עם הצעה מותאמת אישית.</p>
 
           <div className="mt-6 flex items-baseline gap-2">

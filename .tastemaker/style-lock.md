@@ -135,6 +135,41 @@ by 10+ clarifying questions the client answered):
   global `@media (prefers-reduced-motion: reduce)` block in `src/index.css`,
   which already zeroes every CSS transition/animation duration site-wide.
 
+**Second pass — reference-driven** (client shared `vita-travel.webflow.io`
+as a reference after the fact; this session's network policy blocks
+essentially all outbound web access, so it was worked from the client's
+description of what they liked rather than by loading the site):
+- **Hero parallax**: the background photo (oversized to 120% height so no
+  edge is ever exposed) drifts ±8% of its own height as the hero section
+  scrolls past, via a scrubbed ScrollTrigger. Desktop only — dropped on
+  mobile, consistent with the "faster/simpler on mobile" answer.
+- **Page-transition curtain** (`src/components/PageTransitionOverlay.jsx`):
+  replaces the plain content-fade with an overlay-style transition — a
+  solid navy panel snaps to fully covering the viewport in a
+  `useLayoutEffect` (so it paints before the swapped route is ever visible,
+  no flash), holds briefly, then wipes away (`power3.inOut`) to reveal the
+  new page underneath, which has already settled. 0.6s + 150ms hold on
+  desktop, 0.3s + 50ms hold on mobile. Reduced motion gets a plain 150ms
+  opacity flash instead of the transform wipe. The existing `.page-transition`
+  content fade+rise still runs underneath, invisible until the curtain lifts.
+- **`RevealHeading`** (`src/components/RevealHeading.jsx`): word-by-word
+  scroll reveal for section headings — each word is masked
+  (`overflow-hidden`) and slides up into place on a staggered, one-shot
+  ScrollTrigger. Applied to every static marketing H2 sitewide (Home
+  sections, AboutPage, PackageDetail) and the AboutPage H1. Left as plain
+  text: the PackageDetail hero H1, since it's built from interpolated
+  `{pkg.flag} {pkg.destination}` rather than a single string and the
+  component isn't built to split multi-node children.
+- **Package card hover chip**: a small arrow-in-circle badge fades up into
+  the top corner of the destination photo on hover, on top of the existing
+  zoom+lift, reinforcing the "open this" affordance the reference's card
+  hover states have.
+- **Gating fix, extended**: the sitewide `hover` pointer-gating fix above
+  turned out to have a sibling gap — Tailwind v4's `group-hover` variant is
+  built the same ungated way. Redefined it too, in the same place, with the
+  same `@media (hover: hover) and (pointer: fine)` guard, so the card
+  zoom/lift/chip hovers introduced in this project don't stick on tap.
+
 ## Navigation
 
 Floating "island" pill nav (logo + WhatsApp + hamburger) expanding to a
