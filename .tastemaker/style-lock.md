@@ -277,6 +277,17 @@ applied end-to-end on the home page.
   Button and form inputs already had their own focus treatment and are
   unaffected (their utility classes win on specificity).
 
+## Fifth pass — client override: Hero back to full-bleed
+
+Explicit client request, overriding the third pass's asymmetric-split
+Hero: "I want the hero image to be full-screen." Per the rule that an
+explicit brief always wins over a general anti-pattern heuristic, reverted
+the Hero to a full-bleed background photo with a scrim (the framed-panel
+composition and its "MT" monogram badge are gone), while keeping every
+improvement layered on since: `min-h-[100dvh]` (not `min-h-screen`), the
+scroll parallax, the single-primary-CTA structure, and the entrance
+timeline. Content order and copy are unchanged from the fourth pass.
+
 ## Open items / honest gaps
 
 - Testimonials are still placeholder copy (flagged since the first pass).
