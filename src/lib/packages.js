@@ -1,3 +1,5 @@
+import { BATUMI_IMAGE, LIMASSOL_IMAGE } from './media';
+
 const STORAGE_KEY = 'moriah-travel-packages';
 
 export const DEFAULT_PACKAGES = [
@@ -14,6 +16,7 @@ export const DEFAULT_PACKAGES = [
     meal: 'ארוחת בוקר כלולה',
     price: 1834,
     priceNote: 'לאדם בחדר זוגי',
+    image: BATUMI_IMAGE,
     gradientFrom: '#2b4d52',
     gradientTo: '#4c7d84',
   },
@@ -30,6 +33,7 @@ export const DEFAULT_PACKAGES = [
     meal: 'ארוחת בוקר כלולה',
     price: 2700,
     priceNote: 'לאדם בחדר זוגי',
+    image: LIMASSOL_IMAGE,
     gradientFrom: '#1f3a3e',
     gradientTo: '#3a636a',
   },

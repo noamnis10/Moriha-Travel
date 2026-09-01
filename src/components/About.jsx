@@ -1,4 +1,5 @@
 import logoIcon from '../assets/logo-icon.svg';
+import { ABOUT_IMAGE } from '../lib/media';
 import { useReveal } from '../hooks/useReveal';
 
 const STATS = [
@@ -14,9 +15,19 @@ export default function About() {
     <section id="about" className="bg-paper py-24">
       <div ref={reveal.ref} className={`mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 px-6 lg:grid-cols-[0.8fr_1.2fr] ${reveal.className}`}>
         <div className="order-first flex justify-center lg:order-none">
-          <div className="relative flex h-64 w-64 items-center justify-center rounded-full border border-border bg-paper-soft sm:h-80 sm:w-80">
-            <div className="absolute -inset-3 -z-10 rounded-full bg-gradient-to-br from-teal-800 to-teal-500 opacity-15" />
-            <img src={logoIcon} alt="" className="w-2/5" />
+          <div className="relative w-full max-w-sm">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem] shadow-lg">
+              <img
+                src={ABOUT_IMAGE}
+                alt="פגישת ייעוץ אישית עם צוות Moriah Travel"
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-teal-950/35 via-transparent to-teal-800/10" />
+            </div>
+            <div className="absolute -bottom-6 -start-6 flex h-20 w-20 items-center justify-center rounded-full border border-border bg-paper shadow-lg">
+              <img src={logoIcon} alt="" className="w-1/2" />
+            </div>
           </div>
         </div>
 

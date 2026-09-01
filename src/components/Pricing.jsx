@@ -65,10 +65,22 @@ export default function Pricing() {
                 }`}
               >
                 <div
-                  className="flex h-40 items-end p-5"
+                  className="relative flex h-40 items-end overflow-hidden p-5"
                   style={{ background: `linear-gradient(135deg, ${pkg.gradientFrom}, ${pkg.gradientTo})` }}
                 >
-                  <span className="text-lg font-bold text-white drop-shadow">
+                  {pkg.image && (
+                    <img
+                      src={pkg.image}
+                      alt=""
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover mix-blend-luminosity"
+                    />
+                  )}
+                  <div
+                    className="absolute inset-0"
+                    style={{ background: `linear-gradient(180deg, ${pkg.gradientFrom}66, ${pkg.gradientTo}b3)` }}
+                  />
+                  <span className="relative text-lg font-bold text-white drop-shadow">
                     {pkg.flag} {pkg.destination}
                   </span>
                 </div>
